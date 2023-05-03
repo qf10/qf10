@@ -4,7 +4,7 @@ import { localCache } from '@/utils/cache'
 import { mapMenuToPersssions } from '@/utils/map-menu'
 import { defineStore } from 'pinia'
 import useMainStore from '../main/main'
-
+import { ElMessage } from 'element-plus'
 interface ILoginState {
   token: string
   userInfo: any
@@ -23,6 +23,10 @@ const useLoginStore = defineStore('login', {
     async accountLoginAction(account: any) {
       // 1.获取登录信息
       const loginRes = await accountLogin(account)
+      if (!loginRes.data) {
+        ElMessage.warning(loginRes.response.data)
+        return
+      }
       const { id, token } = loginRes.data
       this.token = token
 

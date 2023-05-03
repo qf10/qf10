@@ -29,7 +29,7 @@
             class="avatar"
             src="https://upload.jianshu.io/users/upload_avatars/1102036/c3628b478f06.jpeg"
           />
-          <span class="name">coderwhy</span>
+          <span class="name">{{ userInfo.name }}</span>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
@@ -55,7 +55,6 @@
 <script setup lang="ts" name="header-info">
 import { useRouter } from 'vue-router'
 import { localCache } from '@/utils/cache'
-
 const router = useRouter()
 function handleExitClick() {
   localCache.deleteCache('token')
@@ -63,6 +62,7 @@ function handleExitClick() {
   localCache.deleteCache('userMenus')
   router.push('/login')
 }
+const userInfo = localCache.getCache('useInfo')
 </script>
 
 <style scoped lang="less">

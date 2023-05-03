@@ -60,11 +60,7 @@ class HYRequest {
           if (config.interceptors?.responseInterceptor) {
             res = config.interceptors.responseInterceptor(res)
           }
-          if (res.code !== 0) {
-            throw new Error(res.data)
-          } else {
-            resolve(res)
-          }
+          resolve(res)
         })
         .catch((err: any) => {
           if (config.interceptors?.responseInterceptorCatch) {

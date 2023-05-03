@@ -48,7 +48,6 @@ declare module '@vue/runtime-core' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     ElTree: typeof import('element-plus/es')['ElTree']
-    ElUpload: typeof import('element-plus/es')['ElUpload']
     HeaderCrumb: typeof import('./src/components/nav-header/c-cpns/header-crumb.vue')['default']
     HeaderInfo: typeof import('./src/components/nav-header/c-cpns/header-info.vue')['default']
     LineEchart: typeof import('./src/components/page-charts/src/line-echart.vue')['default']
